@@ -1,0 +1,7 @@
+#返校数据
+SELECT entry as 流水号,xh as 学号,xm as 姓名, xslx as 身份,xy_name as 学院,zy_name as 专业,nj as 年级,bj_name as 班级,fdy_id as 辅导员号, fdy_name as 辅导员名,cfdd_sf as 出发省,cfdd_cs as 出发市,cfxq as 出发县区,sqzl as 码类型,jtgj as 交通工具,ssld as 宿舍楼号,ssq as 宿舍区,ssh as 宿舍号,yjdx_rq_name as 预计到校日期,yjdx_sj_name as 预计到校时间, sqzt_name as 申请状态,rxsj as 入校时间,ddz_name as 到达站,sfrx as 是否入校,jtxx as 交通信息
+FROM
+t_flow_yjs_back_school
+WHERE
+ sfrx = '正常入校'
+AND xslx = '本科生';
