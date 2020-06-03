@@ -1,4 +1,4 @@
-package cn.edu.zufe;
+package cn.edu.zufe.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class DBUtil {
+public class DBUtils {
 	  public static Connection getConnection(){
 		  Connection conn=null;
 		  try {
@@ -14,15 +14,13 @@ public class DBUtil {
 			  String user="dcp_core_pfct";
 			  String password="neusoft";
 			  
-			  Class.forName("oracle.jdbc.driver.OracleDriver");//加载数据驱动
-			  conn = DriverManager.getConnection(url, user, password);// 连接数据库
+			  Class.forName("oracle.jdbc.driver.OracleDriver");
+			  conn = DriverManager.getConnection(url, user, password);
 			  
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			System.out.println("加载数据库驱动失败");
 		}catch(Exception e){
 			e.printStackTrace();
-			System.out.println("连接数据库失败");
 		}
 		  return conn;
 	  }

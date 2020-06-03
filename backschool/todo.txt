@@ -1,0 +1,3 @@
+1、集成mybatis
+2、集成spring
+3、集成redis

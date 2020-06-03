@@ -7,10 +7,11 @@ import java.sql.Statement;
 
 import cn.edu.zufe.utils.DBUtils;
 
-public class SyncHzjkm {
+public class RemindInterface {
 	public static void main(String[] args){
 		Connection connection = DBUtils.getConnection();
 		try {
+			String data = "";
 			HttpInterface httpInterface = new HttpInterface();
 			//httpInterface.doPostOrGet(pathUrl, data);
 			Statement st = connection.createStatement();
