@@ -1,3 +1,5 @@
-1、集成mybatis
-2、集成spring
-3、集成redis
+1、集成maven
+参考：https://www.cnblogs.com/qiyebao/p/5226508.html
+2、集成mybatis
+3、集成spring
+4、集成redis
