@@ -6,25 +6,24 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import cn.edu.zufe.utils.DBUtils;
+import cn.edu.zufe.utils.IfsUtils;
 
 public class RemindInterface {
+	
+	public static String PREFIX_PARAM = "http://one.zufe.edu.cn/dcp/ifs?sysid=zufe_ehall&param=";
+	public static String AFTER_PARAM = "module=remind&function=getRemindList&pageNo=1&rc_id=5&idNumber=09901&pageSize=10";
+	public static String 	KEY = "onezufe_ehall_xuwpqoncmdj";
+
+	
+	
 	public static void main(String[] args){
-		Connection connection = DBUtils.getConnection();
+		
 		try {
-			String data = "";
-			HttpInterface httpInterface = new HttpInterface();
-			//httpInterface.doPostOrGet(pathUrl, data);
-			Statement st = connection.createStatement();
-			String querySql = "select xh from icdc_ehall.flow_yjs_back_school where xh  is not null";
-			String updateSql = "";
-			ResultSet xghs = st.executeQuery(querySql);
-			while(xghs.next()){
-				String xh = xghs.getString("xh");
-				
-			}
-		} catch (SQLException e) {
+			String desEncode = IfsUtils.desEncode(AFTER_PARAM, KEY);
+			String response = HttpClient2Interface.doGet(PREFIX_PARAM +desEncode , "UTF-8");
+		} catch (Exception e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e1.printStackTrace();
 		}
 	}
 
