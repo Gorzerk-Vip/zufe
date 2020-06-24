@@ -1,9 +1,12 @@
-1、集成maven
+1、集成git
+https://blog.csdn.net/qq_29954971/article/details/80191193
+
+2、集成maven
 参考：
 https://www.cnblogs.com/qiyebao/p/5226508.html
 
-2、集成mybatis
-
 3、集成spring
 
-4、集成redis
+4、集成mybatis
+
+5、集成redis
